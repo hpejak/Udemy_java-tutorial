@@ -20,6 +20,11 @@ public class Main {
         testItem.addToTerminatorList(new Terminator());
         testItem.showList(testItem.getTerminatorList());
 
+        Anonymous anonymous = new Anonymous();
+        anonymous.getNewMachine().start();
+        anonymous.getTx().refactor();
+
+
         Reader reader = new Reader();
         reader.readFile();
     }
