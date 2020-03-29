@@ -20,6 +20,7 @@ public class Main {
         testItem.addToTerminatorList(new Terminator());
         testItem.showList(testItem.getTerminatorList());
 
-
+        Reader reader = new Reader();
+        reader.readFile();
     }
 }
