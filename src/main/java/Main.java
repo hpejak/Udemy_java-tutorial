@@ -27,5 +27,6 @@ public class Main {
 
         Reader reader = new Reader();
         reader.readFile();
+        reader.fileReader();
     }
 }
