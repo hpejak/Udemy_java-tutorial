@@ -8,4 +8,6 @@ public class Terminator extends Machine {
     public void terminating(){
         System.out.println("Terminator is terminating");
     }
+
+
 }

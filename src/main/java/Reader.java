@@ -1,19 +1,17 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.*;
 import java.util.Scanner;
 
 public class Reader {
 
     private static String fileName = "C:\\Users\\Hrvoje\\Desktop\\TEST1.txt";
-    private static File textFilte = new File(fileName);
-    private static ClassLoader classloader = Thread.currentThread().getContextClassLoader();
-//   InputStream textFilte = classloader.getResourceAsStream("test.csv");
+    private static File textFile = new File(fileName);
+    private static String localFileName = "src/fileTest.txt";
+    private static File localFile = new File(localFileName);
 
 public void readFile(){
     Scanner scanner;
         try {
-            scanner = new Scanner(textFilte);
+            scanner = new Scanner(textFile);
 
             while (scanner.hasNextLine()){
                 String line = scanner.nextLine();
@@ -23,7 +21,7 @@ public void readFile(){
             scanner.close();
 
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.println("File "+ fileName + " dose not exist");
         }
 
 
@@ -31,11 +29,27 @@ public void readFile(){
 
     public void fileReader() {
 
+
         try {
-            FileReader reader = new FileReader(fileName);
+            FileReader reader = new FileReader(localFile);
+            BufferedReader bufferedReader = new BufferedReader(reader);
+
+            String line;
+
+            while( (line = bufferedReader.readLine()) != null) {
+                System.out.println(line);
+            }
+
+            bufferedReader.close();
+
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.println("File "+ localFileName + " dose not exist");
+        } catch (IOException e) {
+            System.out.println("Unable to read file " + localFileName);
         }
 
+        finally {
+            System.out.println("End of reading");
+        }
     }
 }

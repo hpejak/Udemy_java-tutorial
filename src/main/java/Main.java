@@ -1,6 +1,8 @@
+
 public class Main {
 
     public static void main(String[] args) {
+
 
         Generics testItem = new Generics();
 
@@ -12,6 +14,7 @@ public class Main {
         testItem.addToHashMap(2, "John");
         System.out.println(testItem.getTestHashMap());
 
+
         testItem.addToMachineList(new Machine());
         testItem.addToMachineList(new Machine());
         testItem.showMachines();
@@ -19,6 +22,7 @@ public class Main {
         testItem.addToTerminatorList(new Terminator());
         testItem.addToTerminatorList(new Terminator());
         testItem.showList(testItem.getTerminatorList());
+
 
         Anonymous anonymous = new Anonymous();
         anonymous.getNewMachine().start();
@@ -28,5 +32,19 @@ public class Main {
         Reader reader = new Reader();
         reader.readFile();
         reader.fileReader();
+
+        ExceptionTest newTest =  new ExceptionTest();
+
+        try {
+            newTest.run();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        newTest.calculate(0);
+
+        Terminator terminator = new Terminator();
+        terminator.run();
+
     }
 }
