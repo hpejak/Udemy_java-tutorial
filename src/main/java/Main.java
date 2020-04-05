@@ -46,5 +46,8 @@ public class Main {
         Terminator terminator = new Terminator();
         terminator.run();
 
+        Writer writer = new Writer();
+        writer.fileWrite();
+
     }
 }
