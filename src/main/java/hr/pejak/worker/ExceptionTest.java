@@ -1,3 +1,5 @@
+package hr.pejak.worker;
+
 import java.io.IOException;
 import java.sql.Timestamp;
 import java.text.ParseException;

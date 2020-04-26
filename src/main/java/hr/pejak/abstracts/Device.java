@@ -1,3 +1,5 @@
+package hr.pejak.abstracts;
+
 public abstract class Device{
     private String sn;
 

@@ -1,10 +1,14 @@
+package hr.pejak.lib;
+
+import hr.pejak.interfaces.TX;
+
 public class Anonymous {
 
     Machine newMachine = new Machine(){
 
         @Override
         public void start(){
-            System.out.println("Starting Anonymous Machine");
+            System.out.println("Starting hr.pejak.lib.Anonymous hr.pejak.lib.Machine");
         }
     };
 
@@ -12,7 +16,7 @@ public class Anonymous {
     TX tx = new TX() {
         @Override
         public void refactor() {
-            System.out.println("TX is refactoring");
+            System.out.println("hr.pejak.interfaces.TX is refactoring");
         }
     };
 
