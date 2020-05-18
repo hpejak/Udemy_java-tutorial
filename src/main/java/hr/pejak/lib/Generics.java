@@ -3,10 +3,7 @@ package hr.pejak.lib;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 
 public class Generics {
@@ -15,9 +12,10 @@ public class Generics {
 
     List<String> testList = new ArrayList<>();
     List<Machine> machineList = new ArrayList<>();
-    ArrayList<Terminator> terminatorList = new ArrayList<>();
-
+    List<Terminator> terminatorList = new LinkedList<>();
     Map<Integer,String> testHashMap = new HashMap<>();
+    Set<String> testSet = new HashSet<>();
+    Set<Terminator> terminatorSet = new HashSet<>();
 
 
 
@@ -27,6 +25,10 @@ public class Generics {
 
     public void addToTerminatorList(Terminator terminator){
         this.terminatorList.add(terminator);
+    }
+
+    public void addToTerminatorSet(Terminator value){
+        this.terminatorSet.add(value);
     }
 
     public void showMachines(){
@@ -64,16 +66,26 @@ public class Generics {
         this.testHashMap.put(key,value);
     }
 
+    public void addToTestSet(String value){
+        this.testSet.add(value);
+    }
+
     public List<String> getTestList() {
         return testList;
     }
 
     public List<Machine> getMachineList() {
+
         return machineList;
     }
 
     public List<Terminator> getTerminatorList() {
+
         return terminatorList;
+    }
+
+    public Set<Terminator> getTerminatorSet() {
+        return terminatorSet;
     }
 
     public void setTestList(List<String> testList) {

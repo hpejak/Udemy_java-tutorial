@@ -1,24 +1,22 @@
 package hr.pejak.lib;
 
 import hr.pejak.interfaces.TX;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Anonymous {
+    private static final Logger log = LoggerFactory.getLogger(Anonymous.class);
 
     Machine newMachine = new Machine(){
 
         @Override
         public void start(){
-            System.out.println("Starting hr.pejak.lib.Anonymous hr.pejak.lib.Machine");
+            log.info("Starting Anonymous Machine");
         }
     };
 
 
-    TX tx = new TX() {
-        @Override
-        public void refactor() {
-            System.out.println("hr.pejak.interfaces.TX is refactoring");
-        }
-    };
+    TX tx = () -> log.info("TX is refactoring");
 
 
     public Machine getNewMachine() {
