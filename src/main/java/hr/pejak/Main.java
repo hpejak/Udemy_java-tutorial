@@ -1,6 +1,7 @@
 package hr.pejak;
 
 import hr.pejak.enumerators.TerminatorModel;
+import hr.pejak.interfaces.Executable;
 import hr.pejak.lib.*;
 import hr.pejak.worker.Factorial;
 import hr.pejak.worker.Reader;
@@ -25,7 +26,7 @@ public class Main {
         main.inspectAndRepairTerminator(terminator1);
 
 
-        main.startTerminator();
+        main.humanInteraction();
     }
 
 
@@ -178,5 +179,21 @@ public class Main {
         for (Integer element : queue){
             log.info("Q element: {}:", element);
         }
+    }
+
+    public void humanInteraction(){
+
+        Human human = new Human();
+        human.run(new Executable() {
+            @Override
+            public int execute( int x, int y) {
+                log.info("Run Run");
+                return 5;
+            }
+        });
+
+        log.info("---------- AND NEW -----------");
+
+        human.run( (int x, int y ) -> 5 + x + y);
     }
 }
